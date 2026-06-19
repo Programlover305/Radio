@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dsxa07txvhkof"]
+
+[ext_resource type="Script" uid="uid://562q72u6khks" path="res://SoundEffects.gd" id="1_wgkrt"]
+[ext_resource type="AudioStream" uid="uid://bley3138nlkus" path="res://SoundEffects/hello-trailer_01.mp3" id="2_2e4th"]
+[ext_resource type="AudioStream" uid="uid://cevar77yoqmjl" path="res://SoundEffects/u_edtmwfwu7c-beep-329314.mp3" id="3_b5nfn"]
+[ext_resource type="Texture2D" uid="uid://dfgagq7usec7" path="res://Radio.jpg" id="4_5wxxy"]
+
+[node name="Node2D" type="Node2D" unique_id=250415561]
+
+[node name="Node" type="Node" parent="." unique_id=1942052310]
+script = ExtResource("1_wgkrt")
+sound_effects = Array[AudioStream]([ExtResource("2_2e4th"), ExtResource("3_b5nfn")])
+
+[node name="TextureButton" type="TextureButton" parent="Node" unique_id=1116987659]
+offset_right = 225.0
+offset_bottom = 225.0
+texture_normal = ExtResource("4_5wxxy")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Node/TextureButton" unique_id=123211836]
+
+[connection signal="pressed" from="Node/TextureButton" to="Node" method="_on_texture_button_pressed"]
